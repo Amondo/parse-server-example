@@ -4,6 +4,7 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
+var SimpleMailgunAdapter = require('parse-server/lib/Adapters/Email/SimpleMailgunAdapter');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -18,17 +19,12 @@ var api = new ParseServer({
   masterKey: process.env.MASTER_KEY || 'myMasterKey', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',
   publicServerURL: 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',
-  verifyUserEmails: true,
-  emailAdapter: {
-    module: 'parse-server-mailgun',
-    options: {
-      // The address that your emails come from
+  emailAdapter: new SimpleMailgunAdapter {
       fromAddress: 'postmaster@sandboxb57b62665795473f88eb403619b7daa9.mailgun.org',
       // Your domain from mailgun.com
       domain: 'sandboxb57b62665795473f88eb403619b7daa9.mailgun.org',
       // Your API key from mailgun.com
-      apiKey: 'key-a2a6dedf93a65bbc987b300f1bbd33fa',
-    }
+      apiKey: 'key-a2a6dedf93a65bbc987b300f1bbd33fa'
   }
   
 });
