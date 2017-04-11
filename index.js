@@ -18,17 +18,20 @@ var api = new ParseServer({
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || 'myMasterKey', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',
+  
+  verifyUserEmails: true,
   publicServerURL: 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',
   appName: 'Parse App',
-  verifyUserEmails: true,
+  
   emailAdapter: {
-    module: 'parse-server-simple-mailgun-adapter-master',
+    module: 'parse-server-simple-mailgun-adapter',
     options: {
-      fromAddress: 'postmaster@sandboxb57b62665795473f88eb403619b7daa9.mailgun.org',
+      // The address that your emails come from
+      fromAddress: 'parse@example.com',
       // Your domain from mailgun.com
-      domain: 'sandboxb57b62665795473f88eb403619b7daa9.mailgun.org',
+      domain: 'example.com',
       // Your API key from mailgun.com
-      apiKey: 'key-a2a6dedf93a65bbc987b300f1bbd33fa'
+      apiKey: 'key-mykey',
     }
   }
   
