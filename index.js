@@ -20,7 +20,7 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',
   
   verifyUserEmails: true,
-  publicServerURL: 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',
+  publicServerURL: 'http://amondo-parse-server-test.herokuapp.com/parse',
   appName: 'Parse App',
   
   emailAdapter: {
