@@ -12,11 +12,11 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  databaseURI: databaseUri || 'mongodb://heroku_z25kbwmc:470grupv02p4npc30prq5uj0fm@ds145469-a0.mlab.com:45469,ds145469-a1.mlab.com:45469/heroku_z25kbwmc?replicaSet=rs-ds145469',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
-  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  masterKey: process.env.MASTER_KEY || 'myMasterKey', //Add your master key here. Keep it secret!
+  serverURL: process.env.SERVER_URL || 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
