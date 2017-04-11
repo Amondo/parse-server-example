@@ -22,18 +22,7 @@ var api = new ParseServer({
   },
   verifyUserEmails: true,
   publicServerURL: 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',
-  appName: 'Amondo Test',
-  emailAdapter: {
-    module: 'parse-server-mailgun-adapter',
-    options: {
-      // The address that your emails come from
-      fromAddress: 'postmaster@sandboxb57b62665795473f88eb403619b7daa9.mailgun.org',
-      // Your domain from mailgun.com
-      domain: 'sandboxb57b62665795473f88eb403619b7daa9.mailgun.org',
-      // Your API key from mailgun.com
-      apiKey: 'key-a2a6dedf93a65bbc987b300f1bbd33fa',
-    }
-  }
+  appName: 'Amondo Test'
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
