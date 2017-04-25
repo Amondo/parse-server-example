@@ -17,11 +17,11 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || 'myMasterKey', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://amondo-parse-server-test+PARSE_MOUNT.herokuapp.com/parse',
+  serverURL: process.env.SERVER_URL || 'http://amondo+PARSE_MOUNT.herokuapp.com/parse',
   
   verifyUserEmails: true,
-  publicServerURL: 'http://amondo-parse-server-test.herokuapp.com/parse',
-  appName: 'Parse App',
+  publicServerURL: 'http://amondo.herokuapp.com/parse',
+  appName: 'Amondo',
   
   emailAdapter: {
     module: 'parse-server-simple-mailgun-adapter',
